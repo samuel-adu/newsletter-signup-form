@@ -17,63 +17,72 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
+    <script defer src="./main.js"></script>
   </head>
   <body>
-    <main>
-      <picture>
-        <source
-          media="(min-width: 640px)"
-          srcset="./assets/images/illustration-sign-up-desktop.svg"
-        />
-        <img
-          src="./assets/images/illustration-sign-up-mobile.svg"
-          alt="signup illustration"
-        />
-      </picture>
+    <main id="main">
+      <div class="sign-up-page">
+        <div>
+          <picture>
+            <source
+              class="hero-image"
+              media="(min-width: 640px)"
+              srcset="./assets/images/illustration-sign-up-desktop.svg"
+            />
+            <img
+              class="hero-image"
+              src="./assets/images/illustration-sign-up-mobile.svg"
+              alt="signup illustration"
+            />
+          </picture>
+        </div>
+        <div class="container">
+          <h1>Stay updated!</h1>
 
-      <h1>Stay updated!</h1>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+          <ul>
+            <li>Product discovery and building what matters</li>
+            <li>Measuring to ensure updates are a success</li>
+            <li>And much more!</li>
+          </ul>
 
-      <p>Join 60,000+ product managers receiving monthly updates on:</p>
-      <ul>
-        <li>Product discovery and building what matters</li>
-        <li>Measuring to ensure updates are a success</li>
-        <li>And much more!</li>
-      </ul>
+          <!-- Sign-up form start -->
+          <form id="form" class="form" novalidate>
+            <div class="form-field">
+              <label for="email" class="form-field__label">Email address</label>
+              <input
+                class="form-field__input"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email@company.com"
+                required
+              />
+              <span
+                aria-live="polite"
+                id="email-error"
+                class="form-field__message"
+              ></span>
+            </div>
 
-      <!-- Sign-up form start -->
-      <form id="form">
-        <label for="email">Email address</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="email@company.com"
-        />
-        <button>Subscribe to monthly newsletter</button>
-      </form>
-      <!-- Sign-up form end -->
-
-      <!-- Success message start -->
-      <div class="success">
-        <h2>Thanks for subscribing!</h2>
-        <p>
-          A confirmation email has been sent to
-          <span class="subscriberEmail">ash@loremcompany.com</span>. Please open
-          it and click the button inside to confirm your subscription.
-        </p>
-        <button>Dismiss message</button>
+            <button id="submit-btn" class="btn">
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+          <!-- Sign-up form end -->
+        </div>
       </div>
-      <!-- Success message end -->
     </main>
     <footer>
       <p class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by <a href="#">Samuel Adu</a>.
       </p>
     </footer>
   </body>
