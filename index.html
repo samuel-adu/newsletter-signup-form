@@ -25,7 +25,7 @@
   </head>
   <body>
     <main id="main">
-      <div class="sign-up-page">
+      <div id="sign-up-page" class="sign-up-page">
         <div>
           <picture>
             <source
@@ -74,6 +74,24 @@
             </button>
           </form>
           <!-- Sign-up form end -->
+
+          <!-- success modal start-->
+          <div id="success-modal" class="success-modal">
+            <div class="success-page">
+              <div class="success-icon">
+                <img src="./assets/images/icon-success.svg" alt="" />
+              </div>
+              <h1>Thanks for subscribing!</h1>
+              <p>
+                A confirmation email has been sent to
+                <span id="subscriber-email" class="subscriber-email"></span>.
+                Please open it and click the button inside to confirm your
+                subscription.
+              </p>
+              <button id="modal-close-btn" class="btn">Dismiss message</button>
+            </div>
+          </div>
+          <!-- success modal end -->
         </div>
       </div>
     </main>
