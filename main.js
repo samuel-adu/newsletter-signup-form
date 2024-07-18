@@ -2,7 +2,10 @@ const form = document.getElementById('form');
 const emailInput = document.getElementById('email');
 const emailErrorMessageElement = document.getElementById('email-error');
 const main = document.getElementById('main');
-const dismissBtn = document.getElementById('dismiss-btn');
+const signUpPage = document.getElementById('sign-up-page');
+const subsciberEmail = document.getElementById('subscriber-email');
+const successModal = document.getElementById('success-modal');
+const modalCloseBtn = document.getElementById('modal-close-btn');
 
 function isValidEmail(email) {
   const isValidEmail = /^\S+@\S+$/g;
@@ -45,22 +48,16 @@ function handleSubmit(event) {
   const { email } = Object.fromEntries(formData);
 
   if (validateEmail(email)) {
-    main.innerHTML = `
-    <div class="success-page">
-      <div class="success-icon">
-        <img src="./assets/images/icon-success.svg" alt="" />
-      </div>
-      <h1>Thanks for subscribing!</h1>
-      <p> 
-        A confirmation email has been sent to 
-        <span class="subscriber-email">${email}</span>. 
-        Please open it and click the button inside to confirm your subscription.
-      </p>
-      <button id="dismiss-btn" class="btn">Dismiss message</button>
-    </div> `;
+    subsciberEmail.textContent = email;
+    successModal.classList.add('show-modal');
   }
 }
 
 form.addEventListener('input', handleInput);
 
 form.addEventListener('submit', handleSubmit);
+
+modalCloseBtn.addEventListener('click', function () {
+  emailInput.value = '';
+  successModal.classList.remove('show-modal');
+});
