@@ -8,7 +8,8 @@ const successModal = document.getElementById('success-modal');
 const modalCloseBtn = document.getElementById('modal-close-btn');
 
 function isValidEmail(email) {
-  const isValidEmail = /^\S+@\S+$/g;
+  // const isValidEmail = /^\S+@\S+$/g;
+  const isValidEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2}$/;
   return isValidEmail.test(email);
 }
 
