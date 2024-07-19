@@ -1,4 +1,4 @@
-const form = document.getElementById('form');
+const subscribeForm = document.getElementById('form');
 const emailInput = document.getElementById('email');
 const emailErrorMessageElement = document.getElementById('email-error');
 const main = document.getElementById('main');
@@ -45,8 +45,8 @@ function handleInput(event) {
 function handleSubmit(event) {
   event.preventDefault();
 
-  const formData = new FormData(event.target);
-  const { email } = Object.fromEntries(formData);
+  const subscribeFormData = new FormData(subscribeForm);
+  const email = subscribeFormData.get('email');
 
   if (validateEmail(email)) {
     subsciberEmail.textContent = email;
